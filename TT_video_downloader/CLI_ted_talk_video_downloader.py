@@ -3,7 +3,14 @@ from bs4 import BeautifulSoup
 import re # Regular expressions
 import sys # For argument parsing
 
-url = "https://www.ted.com/talks/ethan_hawke_give_yourself_permission_to_be_creative"
+# Exception Handling
+# Can now paste the URL after the function call (CLI tool)
+if len(sys.argv) > 1:
+    url = sys.argv[1]
+else:
+    sys.exit("Error: Please enter the TED talk URL")
+
+# url = "https://www.ted.com/talks/ethan_hawke_give_yourself_permission_to_be_creative"
 r = requests.get(url)
 
 print("Download about to start")
